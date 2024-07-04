@@ -3,7 +3,7 @@ import "./FlagCard.css";
 const FlagCard = (flag, name, alth) => {
   return (
     <div className="card">
-      <img src={flag.flag} alt="{flag.name}" />
+      <img src={flag.flag} alt={flag.name} />
       <h3>{flag.name}</h3>
     </div>
   );
