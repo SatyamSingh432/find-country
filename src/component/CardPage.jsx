@@ -12,7 +12,7 @@ const CardPage = () => {
       .then((data) => {
         setData(data);
       })
-      .catch((error) => console.error(`Error fetching data :${error.message}`));
+      .catch((error) => console.error(`Error fetching data:${error.message}`));
   }, []);
   return (
     <div className="cardPage">
