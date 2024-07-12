@@ -1,4 +1,4 @@
-.countryCard1 {
+.countryCard {
   height: 150px;
   width: 150px;
   display: flex;
@@ -10,10 +10,10 @@
   /* padding-top: 5px; */
   border-radius: 5px;
 }
-.countryCard1 img {
+.countryCard img {
   width: 60%;
   height: auto;
 }
-.countryCard1 h3 {
+.countryCard h3 {
   margin: 0;
 }
