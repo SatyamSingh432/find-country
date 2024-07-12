@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import FlagCard from "./FlagCard";
 import "./CardPage.css";
 const CardPage = () => {
-  const apiUrl = "https://xcountries-backend.azurewebsites.net/all";
+  const apiUrl = "https://restcountries.com/v3.1/all";
   const [data, setData] = useState([]);
   const [name, setName] = useState("");
 
