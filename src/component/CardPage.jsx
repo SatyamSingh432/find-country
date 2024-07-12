@@ -8,12 +8,25 @@ const CardPage = () => {
   const [name, setName] = useState("");
 
   useEffect(() => {
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      })
-      .catch((error) => console.error(`Error fetching data:${error.message}`));
+    const fetchData = async () => {
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data1 = await response.json();
+        setData(data1);
+      } catch (error) {
+        console.error(`Error fetching data: ${error.message}`);
+      }
+    };
+    fetchData();
+    // fetch(apiUrl)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setData(data);
+    //   })
+    //   .catch((error) => console.error(`Error fetching data:${error.message}`));
   }, []);
   const handler = (e) => {
     setName(e.target.value);
