@@ -16,6 +16,7 @@ const CardPage = () => {
         }
         const data1 = await response.json();
         setData(data1);
+        console.log(data1);
       } catch (error) {
         console.error(`Error fetching data: ${error.message}`);
       }
@@ -43,14 +44,16 @@ const CardPage = () => {
       </div>
       <div className="cardPage">
         {data
-          .filter((ele) => ele.name.toLowerCase().includes(name.toLowerCase()))
+          .filter((ele) =>
+            ele.name.common.toLowerCase().includes(name.toLowerCase())
+          )
           .map((ele) => {
             return (
               <FlagCard
-                key={`${ele.name}${Math.floor(Math.random() * 90) + 10}`}
-                flag={ele.flag}
-                name={ele.name}
-                alth={ele.alth}
+                key={`${ele.name.common}${Math.floor(Math.random() * 90) + 10}`}
+                flag={ele.flags.png}
+                name={ele.name.common}
+                alth={ele.flag}
               />
             );
           })}
