@@ -8,7 +8,7 @@ const CardPage = () => {
   const [name, setName] = useState("");
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getCountries = async () => {
       try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -20,7 +20,7 @@ const CardPage = () => {
         console.error(`Error fetching data: ${error.message}`);
       }
     };
-    fetchData();
+    getCountries();
     // fetch(apiUrl)
     //   .then((res) => res.json())
     //   .then((data) => {
