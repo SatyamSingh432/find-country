@@ -5,3 +5,13 @@
   gap: 20px;
   text-align: center;
 }
+.input-box {
+  height: 30px;
+  width: 300px;
+}
+.input-box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+}
