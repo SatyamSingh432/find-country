@@ -3,18 +3,19 @@ import { useState, useEffect } from "react";
 import FlagCard from "./FlagCard";
 import "./CardPage.css";
 const CardPage = () => {
-  const apiUrl = "https://xcountries-backend.azurewebsites.net/all";
   const [data, setData] = useState([]);
   const [name, setName] = useState("");
-
-  useEffect(() => {
-    fetch(apiUrl)
+  const getCountries = () => {
+    fetch("https://xcountries-backend.azurewebsites.net/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data[1].name);
         setData(data);
       })
       .catch((error) => console.error(`Error fetching data:${error.message}`));
+  };
+
+  useEffect(() => {
+    getCountries();
   }, []);
   const handler = (e) => {
     setName(e.target.value);
