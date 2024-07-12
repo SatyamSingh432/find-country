@@ -29,7 +29,7 @@ const CardPage = () => {
           placeholder="Enter Country Name"
         />
       </div>
-      <div className="cardPage">
+      <div className="countryCard">
         {data
           .filter((ele) =>
             ele.name.toLowerCase().startsWith(name.toLowerCase())
